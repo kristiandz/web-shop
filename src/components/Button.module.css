@@ -1,0 +1,14 @@
+.button{
+    margin: 1vh;
+    border: none;
+    border-radius: 6px;
+    color: var(--black);
+    background-color: var(--yellow);
+    box-shadow: 1px 2px 8px rgba(127, 127, 127, 0.25);
+    padding: 1vh 1vw;
+}
+
+.button:hover{
+    background-color: var(--light-yellow);
+    cursor: pointer;
+}
