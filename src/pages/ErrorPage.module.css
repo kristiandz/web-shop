@@ -1,0 +1,14 @@
+.errorPage{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorPage__artwork{
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
