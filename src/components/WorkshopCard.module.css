@@ -30,6 +30,7 @@
     background-size: 100%;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    cursor: pointer;
 }
 
 .workshopCard__categoryIcon{
@@ -79,6 +80,7 @@
     margin: 0;
     padding-top: 10px;
     color: var(--blue);
+    cursor: pointer;
 }
 
 .workshopCard h2{
