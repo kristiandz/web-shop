@@ -71,6 +71,12 @@
       "name": "Harry Roberts",
       "password": "$2a$10$2couoCxDodoecXmLAtdGsOfaDV4KTl1nf5x3L7rhoa7SeBY4zkVpq",
       "id": 12
+    },
+    {
+      "email": "demo@tinelmeetup.com",
+      "password": "demopassword",
+      "name": "demoname",
+      "id": 13
     }
   ],
   "workshops": [
@@ -194,10 +200,106 @@
       "userId": 12,
       "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg"
     }
-    
   ],
   "orders": [
-
+    {
+      "products": [
+        {
+          "id": 9,
+          "title": "Testing the frontend",
+          "desc": "Among all of the shining accomplishments, the improvement in testing methodology and tools is the most encouraging. For years, front-end testing seemed to me like a glorious castle in the sky. No matter how desperately I tried to apply the existing testing methods, none were suitable to test front-end codes, and the meek test results after arduous testing procedures left me insatiable. However, recently emerging tools are providing developers with excellent solutions to the problems of the past, as if to boast the experience gained through years of trial and error.",
+          "price": 450,
+          "date": "2020-07-23T13:51:50.417-07:00",
+          "category": "frontend",
+          "userId": 9,
+          "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg",
+          "amount": "6"
+        }
+      ],
+      "total": 2700,
+      "time": " 20:12",
+      "date": "2022-02-13",
+      "id": 1
+    },
+    {
+      "products": [
+        {
+          "id": 8,
+          "title": "From conversation to software",
+          "desc": "In his soft-skill talk called “From Conversation to Software”, we'll take a look at how you can help people solve their problems and grasp their opportunities. We will write user stories that help you understand their problems. We will use story mapping to create meaningful and insightful choices for your clients. Finally, we'll use release planning to predict and plan, together, where the project will end up. Join us the 26th edition of Tinel Meetup and find out how you can turn the conversation into software.",
+          "price": 350,
+          "date": "2020-06-23T13:51:50.417-07:00",
+          "category": "frontend",
+          "userId": 8,
+          "imageUrl": "https://rep.hr/media/cache/fe_homepage_profile/images/upload/87/tinel26.png",
+          "amount": "3"
+        }
+      ],
+      "total": 1050,
+      "time": " 21:42",
+      "date": "2022-02-17",
+      "id": 2
+    },
+    {
+      "products": [
+        {
+          "id": 6,
+          "title": "Be nice! Help the person who hacks your servers to get data",
+          "desc": "Even in the age where data and privacy became mainstream buzzwords, some agencies and developers are still not paying attention. Primary AWS keys are often shared among devs, SSH keys from former employees are still being kept on servers, credentials are sometimes stored into .env files, or even worse - config files. Let's talk about data and privacy - again. The 27th edition of Tinel is scheduled for the 22nd of August, featuring an interesting talk by Code4hire's founder Srdjan Vranac who will address the technical side of data storage. Srdjan thinks that secrets and credentials management is probably the most overlooked aspect of any app, so we got him to Tinel to show you a few useful tips, tricks and tools that can help you achieve a decent level of security on your application.",
+          "price": 500,
+          "date": "2020-02-21T13:51:50.417-07:00",
+          "category": "backend",
+          "userId": 5,
+          "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg",
+          "amount": "2"
+        },
+        {
+          "id": 1,
+          "title": "When you get lost in API testing",
+          "desc": "The toughest part is probably to figure out which type of tests to write and how to test some specific logic in your app - but don't give up! Paula will present a few tips she learned along the way that will hopefully make your life easier. In this talk, you will hear about different test types and when to use them, real examples based on PHPUnit and Postman, followed by some tools for checking the test quality",
+          "price": 350,
+          "date": "2020-01-26T13:51:50.417-07:00",
+          "category": "backend",
+          "userId": 1,
+          "imageUrl": "https://pbs.twimg.com/media/EREoip3XsAEPDRp.jpg",
+          "amount": "3"
+        }
+      ],
+      "total": 2050,
+      "time": " 21:52",
+      "date": "2022-02-17",
+      "id": 3
+    },
+    {
+      "products": [
+        {
+          "id": 9,
+          "title": "Testing the frontend",
+          "desc": "Among all of the shining accomplishments, the improvement in testing methodology and tools is the most encouraging. For years, front-end testing seemed to me like a glorious castle in the sky. No matter how desperately I tried to apply the existing testing methods, none were suitable to test front-end codes, and the meek test results after arduous testing procedures left me insatiable. However, recently emerging tools are providing developers with excellent solutions to the problems of the past, as if to boast the experience gained through years of trial and error.",
+          "price": 450,
+          "date": "2020-07-23T13:51:50.417-07:00",
+          "category": "frontend",
+          "userId": 9,
+          "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg",
+          "amount": "4"
+        },
+        {
+          "id": 6,
+          "title": "Be nice! Help the person who hacks your servers to get data",
+          "desc": "Even in the age where data and privacy became mainstream buzzwords, some agencies and developers are still not paying attention. Primary AWS keys are often shared among devs, SSH keys from former employees are still being kept on servers, credentials are sometimes stored into .env files, or even worse - config files. Let's talk about data and privacy - again. The 27th edition of Tinel is scheduled for the 22nd of August, featuring an interesting talk by Code4hire's founder Srdjan Vranac who will address the technical side of data storage. Srdjan thinks that secrets and credentials management is probably the most overlooked aspect of any app, so we got him to Tinel to show you a few useful tips, tricks and tools that can help you achieve a decent level of security on your application.",
+          "price": 500,
+          "date": "2020-02-21T13:51:50.417-07:00",
+          "category": "backend",
+          "userId": 5,
+          "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg",
+          "amount": "2"
+        }
+      ],
+      "total": 2800,
+      "time": " 22:37",
+      "date": "2022-02-17",
+      "id": 4
+    }
   ],
   "categories": [
     "design",
