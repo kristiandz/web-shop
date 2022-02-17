@@ -19,6 +19,8 @@ function WorkshopCard(props: any) {
             workshop.amount = 1; // Add a quantity property so we can easily calculate the total price later on
             cartContext.addToCart(workshop); // Add the workshop to the context state
         }
+        if (!cartContext.cartActive)
+            cartContext.toggleCart();
     }
 
     // Open the detailed page for each workshop, using id to easily fetch the right workshop from the URL later on
