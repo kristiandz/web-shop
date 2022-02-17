@@ -1,0 +1,38 @@
+.category{
+    display: flex;
+    align-items: center;
+}
+
+.category__row{
+    display: flex;
+    align-items: center;
+}
+
+.category__row__icon{
+    width: 27px;
+}
+
+.category__row h3{
+    margin: 1vh;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.category__row:hover{
+    text-decoration: underline;
+    color: var(--blue);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.category__row__all{
+    padding-left: 37px;
+    margin-bottom: 1vh;
+}
+
+.category__row__all:hover{
+    text-decoration: underline;
+    color: var(--blue);
+    cursor: pointer;
+    transition: 0.2s;
+}
