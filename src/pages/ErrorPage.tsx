@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
 import styles from "./ErrorPage.module.css";
-import logo from "../assets/logo.png";
 import artwork from "../assets/artwork.png";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 // Return user home if the routing is not found
 

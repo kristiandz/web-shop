@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBroom, faCode, faTable, faBolt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "./CategoryRow.module.css";
 
 function CategoryRow(props: any) {

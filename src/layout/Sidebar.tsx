@@ -1,5 +1,5 @@
-import styles from "./Sidebar.module.css";
 import logo from "../assets/logo-larger.png";
+import styles from "./Sidebar.module.css";
 
 function Sidebar() {
     return (

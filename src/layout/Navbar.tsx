@@ -1,10 +1,10 @@
 import { faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import CartContext from "../store/cart-context";
-import { useContext } from "react";
-import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { useContext } from "react";
 import Cart from "./Cart";
 
 function Navbar() {

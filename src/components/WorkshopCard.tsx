@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock, faCalendarTimes } from '@fortawesome/free-regular-svg-icons'
-import { getCategoryIcon } from "./CategoryRow";
-import { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import CartContext from "../store/cart-context";
-import Button from "./Button";
+import { getCategoryIcon } from "./CategoryRow";
 import styles from "./WorkshopCard.module.css";
+import { useContext } from "react";
+import Button from "./Button";
 
 function WorkshopCard(props: any) {
 

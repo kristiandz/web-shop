@@ -1,10 +1,10 @@
-import Button from "../components/Button";
-import CartItem from "../components/CartItem";
-import styles from "./Cart.module.css";
-import CartContext from "../store/cart-context";
-import { useContext } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimes, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import CartContext from "../store/cart-context";
+import CartItem from "../components/CartItem";
+import Button from "../components/Button";
+import styles from "./Cart.module.css";
+import { useContext } from "react";
 
 function Cart() {
 
