@@ -12,6 +12,7 @@ interface ContextInterface {
     toggleCheckout: () => void,
     toggleCart: () => void,
     isInCart: (workshopID: number) => boolean
+    clearCart: () => void
 }
 
 // Create context based on the interface and set default values
@@ -25,7 +26,8 @@ const CartContext = createContext<ContextInterface>({
     updateWorkshop: () => { },
     toggleCheckout: () => { },
     toggleCart: () => { },
-    isInCart: () => { return false }
+    isInCart: () => { return false },
+    clearCart: () => { }
 });
 
 // Wrapper for the application, so we can easily use and update cart and checkout funcitonalities
@@ -72,6 +74,10 @@ export function CartContextProvider(props: any) {
         return workshops.some((workshop) => workshop.id === workshopID);
     }
 
+    function clearCartHandler(){
+        setWorkshops([]);
+    }
+
     // Context values that we can access from the application once wrapped and hooked from the child component
     const context = {
         cartItems: workshops,
@@ -83,7 +89,8 @@ export function CartContextProvider(props: any) {
         updateWorkshop: updateWorkshopHandler,
         toggleCheckout: toggleCheckoutHandler,
         toggleCart: toggleCartHandler,
-        isInCart: isInCartHandler
+        isInCart: isInCartHandler,
+        clearCart: clearCartHandler
     };
 
     // Context wrapper for the application
