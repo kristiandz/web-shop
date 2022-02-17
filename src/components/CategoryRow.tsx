@@ -33,10 +33,11 @@ function CategoryRow(props: any) {
             break;
     }
 
+    // Setting the state from Home page via the prop
     const selectCategory = () => {
         props?.selection(props?.title);
     }
-    
+    // Setting the state from Home page via the prop, hardcoded here for the "All" category
     const selectAll = () => {
         props?.selection("All");
     }
@@ -53,5 +54,22 @@ function CategoryRow(props: any) {
         </div>
     );
 }
-
 export default CategoryRow;
+
+
+// Helper function to return the category icon to any component that provides category name
+export function getCategoryIcon(title: string) {
+
+    switch (title) {
+        case "marketing":
+            return faBolt;
+        case "design":
+            return faBroom;
+        case "frontend":
+            return faTable;
+        case "backend":
+            return faCode;
+        default:
+            return faBolt;
+    }
+}
