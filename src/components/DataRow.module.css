@@ -1,0 +1,29 @@
+.dataRow{
+    width: 95%;
+    height: 67px;
+    background-color: var(--lighter-grey);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1px;
+    border-radius: 8px;
+}
+
+.dataRow__content{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dataRow span{
+    font-weight: 600;
+}
+
+.dataRow a{
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 15px;
+}
