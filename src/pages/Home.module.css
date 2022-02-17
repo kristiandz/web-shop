@@ -1,0 +1,71 @@
+.home{
+    padding-top: 9vh;
+    color: var(--blacks);
+    background-color: var(--white);
+}
+
+.home__main{
+    display: flex;
+    z-index: 1;
+}
+
+.home__workshopSideMenu{
+    width: 20vw;
+    height: 82vh;
+}
+
+.home__workshopSideMenu__fixed{
+    position: fixed;
+    padding-top: 8vh;
+    padding-left: 2vw;
+}
+
+.home__header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3vh 0;
+    padding-left: 1vw;
+}
+
+.home__header h2{
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 125%;
+    margin: 0;
+}
+
+.home__header span{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 125%;
+    color: var(--light-grey);
+}
+
+.home__workshopContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    padding: 1vw;
+    justify-content: flex-start;
+}
+
+.home__workshops{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+  
+.home__loadMore{
+    text-align: end;
+    padding: 5vh 0;
+    padding-right: 15%;
+}
+
+.home__loadMore span{
+    color: var(--darker-grey);
+    font-weight: bold;
+    font-size: 17px;
+    border-bottom: 2px solid var(--light-blue);   
+    cursor: pointer;
+}
