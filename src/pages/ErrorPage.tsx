@@ -4,8 +4,7 @@ import styles from "./ErrorPage.module.css";
 import logo from "../assets/logo.png";
 import artwork from "../assets/artwork.png";
 
-// Return the user back towards correct routing
-// TODO: Use history to return to previous page, not only home
+// Return user home if the routing is not found
 
 function ErrorPage() {
     return (
