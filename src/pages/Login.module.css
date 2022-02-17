@@ -1,0 +1,91 @@
+.login{
+    background-color: var(--white);
+    display: flex;
+    height: 100vh;
+}
+
+.login__sideContainer{
+    margin-left: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8vh 0;
+    z-index: 1;
+}
+
+.login__loginForm{
+    margin-left: 25vw;
+    width: 29vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.login__loginForm input{
+    height: 50px;
+    width: 26vw;
+    border: 1px solid #7F7F7F;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+/* Placeholder text+cursor offset */
+.login__loginForm input[type="text"],
+.login__loginForm input[type="password"]{
+    padding-left: 20px;
+    font-weight: 600;
+    line-height: 125%;
+}
+
+.login__loginForm__icon{
+    position: relative;
+    top: 12px;
+    left: 23vw;
+    margin-bottom: -30px;
+}
+
+.login__loginForm h2 {
+    color: var(--darker-grey);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 60.75px;
+    line-height: 125%;
+}
+
+.login__loginForm h6 {
+    color: var(--darker-grey);
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 125%;
+}
+
+.login__loginForm span{
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 150%;
+}
+
+.login__loginForm a{
+    padding: 1vh 0;
+    color: var(--blue);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 125%;
+    text-decoration: underline;
+}
+
+.login__artwork{
+    z-index: -1;
+    position: absolute;
+    /* Make it responsive */
+    width: 42vh;
+    left: 0;
+    bottom: 0;
+}
+
