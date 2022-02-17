@@ -1,24 +1,33 @@
+import { CartContextProvider } from "./store/cart-context";
+import WorkshopDetails from "./pages/WorkshopDetails";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { CartContextProvider } from "./store/cart-context";
 import ErrorPage from "./pages/ErrorPage";
+import Orders from "./pages/Orders";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Orders from "./pages/Orders";
 // Global CSS settings for the application, in the rest of the appliaction we are using local css modules and classNames
 import './App.css';
 
 function App() {
 
-  const [isAuthorized, setAuthorize] = useState(false); // Authorization state, default is false
+  const [isAuthorized, setAuthorize] = useState(true); // Authorization state, change to false if Login is enabled
+
+  // Commented out to disable the login as it is not a part of this "sprint".
+  // Basic auth works for testing, uncomment following lines to test.
+
+  /*
+  //localStorage. clear(); // No logout is implemented yet, this clears the cache (logout)
+  const session = localStorage.getItem("username"); // Check localstorage for an existing user
 
   useEffect(() => {
-    if (isAuthorized === false)
+    if (session != undefined)
       setAuthorize(true);
     else
       setAuthorize(false);
     // eslint-disable-next-line 
   }, []);
+  */
 
   // Depending on the state, the app is rendering different pages
   if (isAuthorized) {
@@ -29,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
+          <Route path="workshop-details" element={<WorkshopDetails />} />
           <Route path="orders" element={<Orders />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
@@ -37,9 +47,10 @@ function App() {
   }
   else {
     return (
+      // Rendering login when the user is not authorized, passing the setState to change it from login page
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/" element={<Login login={setAuthorize} />} />
+        <Route path="login" element={<Login login={setAuthorize} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     );
