@@ -8,6 +8,7 @@
     align-items: center;
     background-color: var(--light-yellow);
     color: var(--black);
+    z-index: 2;
 }
 
 .navbar__logo{
