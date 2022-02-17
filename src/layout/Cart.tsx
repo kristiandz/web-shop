@@ -1,5 +1,5 @@
-import { faTimes, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartContext from "../store/cart-context";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
@@ -15,8 +15,8 @@ function Cart() {
     cartContext.cartActive === true ? styleClass = styles.cart__active : styleClass = styles.cart;
 
     // Caculate the total price we need to checkout
-    let total=0;
-    cartContext.cartItems.forEach((element:any) => {
+    let total = 0;
+    cartContext.cartItems.forEach((element: any) => {
         total += element.amount * element.price;
     });
 

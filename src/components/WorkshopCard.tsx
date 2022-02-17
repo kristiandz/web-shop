@@ -1,5 +1,5 @@
-import { faClock, faCalendarTimes } from '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faClock, faCalendarTimes } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartContext from "../store/cart-context";
 import { getCategoryIcon } from "./CategoryRow";
 import styles from "./WorkshopCard.module.css";
