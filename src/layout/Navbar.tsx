@@ -1,5 +1,5 @@
-import { faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartContext from "../store/cart-context";
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
@@ -24,7 +24,7 @@ function Navbar() {
             <div className={styles.navbar__items}>
                 <div className={styles.navbar__items__user}>
                     <FontAwesomeIcon icon={faUser} size="1x" />
-                    <span>User</span>
+                    <Link to="/orders"><span>My orders</span></Link>
                 </div>
                 <div onClick={cartContext.toggleCart} className={style}>
                     <FontAwesomeIcon icon={faShoppingCart} size="1x" />

@@ -36,6 +36,11 @@
     cursor: pointer;
 }
 
+.navbar__items__user a{
+    text-decoration: none;
+    color: var(--black);
+}
+
 .navbar__items__cart{
     display: flex;
     width: 15vw;
