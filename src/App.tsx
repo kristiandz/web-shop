@@ -1,5 +1,5 @@
 import { CartContextProvider } from "./store/cart-context";
-import WorkshopDetails from "./pages/WorkshopDetails";
+import Workshop from "./pages/Workshop";
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ErrorPage from "./pages/ErrorPage";
@@ -38,7 +38,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="home" element={<Home />} />
-          <Route path="workshop-details" element={<WorkshopDetails />} />
+          <Route path="workshop" element={<Workshop />}>
+            <Route path=":id" element={<Workshop />} />
+          </Route>
           <Route path="orders" element={<Orders />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
