@@ -25,7 +25,7 @@ function WorkshopCard(props: any) {
 
     // Open the detailed page for each workshop, using id to easily fetch the right workshop from the URL later on
     const openWorkshopDetails = () => {
-        history("/workshopDetails/" + props?.value.id)
+        history("/workshop/" + props?.value.id)
     }
 
     // Parse the date from db
