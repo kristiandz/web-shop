@@ -44,7 +44,7 @@ function Workshop() {
             setSpeaker(speakerFromServer);
         };
         getSpeaker();
-    }, [speaker])
+    }, [workshop])
 
     // Try fetching the data, await for it to arrive from the databse, handle the errors if any arise, does not include status errors.
     const fetchWorkshop = async (id:any) => {
