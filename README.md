@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+## Web shop for workshops [![Build](https://github.com/kristiandz/web-shop/actions/workflows/ci.yml/badge.svg)](https://github.com/kristiandz/web-shop/actions)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built using React in Typscript. This repo includes JSON Server and a db.json file that servers as a mock backend for development.
+Currently the code is set to fetch the data from a Firebase REST API and the application is hosted on CentOS/Apache, the live preview is available at https://tinnel-workshops.tk/
 
+## Current status
+The required functionality of the application from the user stories has been implemented, all the functions and components should work without problems. At last testing, all the functionalities worked fine on multiple browsers, what is lacking is work to CSS, the application is not responsive to small and medium screens tho, it was built so that it wont take long to implement full responsiveness. A lot of types and interfaces have been skipped with "any" type for easier development.
+
+## TODO
+- Responsiveness for all screen sizes
+- Run the CSS in autoprefixer for better compatibility
+- Implement all interfaces and assign correct types where needed
+- Unit testing, integration testing
+- Review and optimize the code, find bugs
+- Expand the application with the provided design for a different set of user stories ? 
+
+
+ Development will continue from this point on to finish what I planned planned, it won't take long anyways.
+  
 ## Available Scripts
-
 In the project directory, you can run:
-
+### `npm install`
+Clone the repo and then run "npm install" to set the project locally
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `npm run server`
+Runs the JSON server on port [http://localhost:3001](http://localhost:3001)\
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
-
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
 To learn React, check out the [React documentation](https://reactjs.org/).
