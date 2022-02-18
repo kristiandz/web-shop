@@ -20,7 +20,7 @@ function Login(props: any) {
 
         const fetchWorkshops = async () => {
             try {
-                const res = await fetch("http://localhost:3001/users/13")
+                const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/12.json")
                 const data = res.json();
                 return data;
             }

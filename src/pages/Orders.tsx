@@ -14,7 +14,12 @@ function Orders() {
         // GET workshops and categories from the database and store it in the state
         const getWorkshops = async () => {
             const ordersFromServer = await fetchOrders();
-            setOrders(ordersFromServer);
+            let array:any=[];
+            Object.keys(ordersFromServer).forEach(function (key: any) {
+                array.push(ordersFromServer[key]);
+            });
+            setOrders(array);
+            console.log(orders)
         };
         getWorkshops();;
     }, [])
@@ -22,7 +27,7 @@ function Orders() {
     // Try to get the data from the database, catch errors
     const fetchOrders = async () => {
         try {
-            const res = await fetch("http://localhost:3001/orders")
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/orders.json")
             const data = res.json();
             return data;
         }
@@ -30,7 +35,7 @@ function Orders() {
             throw new Error("Cannot fetch orders from the DB");
         }
     }
-    
+
     // Work in progress, this was not in this "sprint's" backlog
     return (
         // Currently only rendering id and amount from the orders in database, since we need to setup it differently from the given task
@@ -55,7 +60,7 @@ function Orders() {
                 </div>
                 {!orders[0] ? <h5>No orders yet...</h5> :
                     <>
-                        {orders.map((element, i) => { return (<DataRow value={element} id={i} key={element.id} />) })}
+                        {orders.map((element:any,i:any) => { return (<DataRow value={element} id={i} key={i} />) })}
                     </>
                 }
             </div>

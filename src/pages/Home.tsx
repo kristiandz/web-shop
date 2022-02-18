@@ -34,7 +34,7 @@ function Home() {
     // Try fetching the data, await for it to arrive from the databse, handle the errors if any arise, does not include status errors.
     const fetchWorkshops = async () => {
         try {
-            const res = await fetch("http://localhost:3001/workshops")
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/workshops.json")
             const data = res.json();
             return data;
         }
@@ -44,7 +44,7 @@ function Home() {
     }
     const fetchCategories = async () => {
         try {
-            const res = await fetch("http://localhost:3001/categories");
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/categories.json");
             const data = res.json();
             return data;
         }

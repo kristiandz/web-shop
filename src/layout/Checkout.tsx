@@ -39,7 +39,7 @@ function Checkout() {
         // Making the object to POST into the databse
         let checkout:{} = { products: cartContext.cartItems, total: price, time: time, date: date };
         // Posting the object to the database, if there are no errors, show the success screen
-        await fetch("http://localhost:3001/orders", {
+        await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/orders.json", {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(checkout)

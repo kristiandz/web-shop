@@ -25,13 +25,12 @@ function Workshop() {
     useEffect(() => {
         // GET all workshops and the specific one from the id and store it in the state
         const getWorkshop = async () => {
-            const workshopFromServer = await fetchWorkshop();
+            const workshopFromServer = await fetchWorkshop(id);
             workshopFromServer.amount = 1;
             setWorkshop(workshopFromServer);
         };
         const getAllWorkshops = async () => {
             const workshopsFromServer = await fetchWorkshops();
-            workshopsFromServer.amount = 1;
             setAllWorkshops(workshopsFromServer);
         };
         getWorkshop();
@@ -48,9 +47,9 @@ function Workshop() {
     }, [speaker])
 
     // Try fetching the data, await for it to arrive from the databse, handle the errors if any arise, does not include status errors.
-    const fetchWorkshop = async () => {
+    const fetchWorkshop = async (id:any) => {
         try {
-            const res = await fetch("http://localhost:3001/workshops/" + id)
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/workshops/" + (id-1) +".json");
             const data = res.json();
             return data;
         }
@@ -58,7 +57,7 @@ function Workshop() {
     }
     const fetchSpeaker = async () => {
         try {
-            const res = await fetch("http://localhost:3001/users/" + workshop?.userId)
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + workshop?.userId + ".json");
             const data = res.json();
             return data;
         }
@@ -66,7 +65,7 @@ function Workshop() {
     }
     const fetchWorkshops = async () => {
         try {
-            const res = await fetch("http://localhost:3001/workshops");
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/workshops.json");
             const data = res.json();
             return data;
         }
@@ -133,7 +132,7 @@ function Workshop() {
                                     </select>
                                     <div onClick={addToCart}><Button title="Add to Cart" width="12vw" /></div>
                                 </div>
-                                <span>Subtotal: {workshop?.price}EUR</span>
+                                <span>Subtotal: {workshop?.price*workshop?.amount} EUR</span>
                             </div>
                         </div>
                     </div>

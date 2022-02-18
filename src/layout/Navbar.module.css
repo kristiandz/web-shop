@@ -18,7 +18,7 @@
 
 .navbar__items{
     display: flex;
-    width: 22vw;
+    width: 24vw;
     padding-right: 9vw;
     flex-direction: row;
     justify-content: space-between;
