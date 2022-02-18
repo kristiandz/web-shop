@@ -1,4 +1,4 @@
-## Web shop for workshops [![Build](https://github.com/kristiandz/web-shop/actions/workflows/ci.yml/badge.svg)](https://github.com/kristiandz/web-shop/actions)
+## Web shop for workshops [![Build](https://github.com/kristiandz/web-shop/actions/workflows/ci.yml/badge.svg)](https://github.com/kristiandz/web-shop/actions) [![CodeFactor](https://www.codefactor.io/repository/github/kristiandz/web-shop/badge)](https://www.codefactor.io/repository/github/kristiandz/web-shop)
 
 This project was built using React in Typscript. This repo includes JSON Server and a db.json file that servers as a mock backend for development.
 Currently the code is set to fetch the data from a Firebase REST API and the application is hosted on CentOS/Apache, the live preview is available at https://tinnel-workshops.tk/
