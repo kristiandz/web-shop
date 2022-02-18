@@ -10,7 +10,7 @@ function CartItem(props: any) {
     const defaultImage = "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg";
 
     // Get the updated selection from the dropdown and update the workshop in the context state
-    const handleChange = (e:any) => {
+    const handleChange = (e: any) => {
         let cartItem = props?.data
         cartItem.amount = e.target.value;
         cartContext.updateWorkshop(cartItem);
@@ -33,7 +33,7 @@ function CartItem(props: any) {
                 </div>
                 <div>
                     {/* Select the amount of tickets we want to buy for each workshop */}
-                    <select aria-label="ticket" className={styles.cartItem__dropdown} onChange={handleChange} >
+                    <select value={props?.data.amount} className={styles.cartItem__dropdown} onChange={handleChange} >
                         <option value={1}>1</option><option value={2}>2</option>
                         <option value={3}>3</option><option value={4}>4</option>
                         <option value={5}>5</option><option value={6}>6</option>
@@ -44,7 +44,7 @@ function CartItem(props: any) {
                 </div>
             </div>
             <div className={styles.cartItem__removeItem} >
-                <FontAwesomeIcon icon={faTrashAlt} size="sm" className={styles.cartItem__removeItem__icon} onClick={removeFromCart}/>
+                <FontAwesomeIcon icon={faTrashAlt} size="sm" className={styles.cartItem__removeItem__icon} onClick={removeFromCart} />
             </div>
         </div>
     );
