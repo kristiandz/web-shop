@@ -15,7 +15,7 @@ The required functionality of the application from the user stories has been imp
 - Expand the application with the provided design for a different set of user stories ? 
 
 
- Development will continue from this point on to finish what I planned planned, it won't take long anyways.
+ Development will continue from this point on to finish what I have already planned to complete.
   
 ## Available Scripts
 In the project directory, you can run:

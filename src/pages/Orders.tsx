@@ -19,7 +19,6 @@ function Orders() {
                 array.push(ordersFromServer[key]);
             });
             setOrders(array);
-            console.log(orders)
         };
         getWorkshops();;
     }, [])
