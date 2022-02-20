@@ -21,7 +21,7 @@ function Workshop() {
     const [workshop, setWorkshop] = useState<any>({});
     const [allWorkshops, setAllWorkshops] = useState<any[]>([]);
     const [speaker, setSpeaker] = useState<any>({});
-    
+
     useEffect(() => {
         // GET all workshops and the specific one from the id and store it in the state
         const getWorkshop = async () => {
@@ -37,15 +37,18 @@ function Workshop() {
         getAllWorkshops();
     }, [id])
 
-
     useEffect(() => {
-        // GET speaker from the database and store it in the state
-        const getSpeaker = async () => {
-            const speakerFromServer = await fetchSpeaker();
-            setSpeaker(speakerFromServer);
-        };
-        getSpeaker();
-    }, [workshop])
+        // Moving the fetch inside since we depend on the workshop
+        const fetchSpeaker = async () => {
+            try {
+                const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + workshop?.userId + ".json");
+                const data = await res.json();
+                setSpeaker(data);
+            }
+            catch (error) { throw new Error("Cannot fetch user: " + id + " from the DB"); }
+        }
+        fetchSpeaker();
+    }, [workshop, id])
 
     // Try fetching the data, await for it to arrive from the databse, handle the errors if any arise, does not include status errors.
     const fetchWorkshop = async (id: any) => {
@@ -55,14 +58,6 @@ function Workshop() {
             return data;
         }
         catch (error) { throw new Error("Cannot fetch workshop: " + id + " from the DB"); }
-    }
-    const fetchSpeaker = async () => {
-        try {
-            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + workshop?.userId + ".json");
-            const data = res.json();
-            return data;
-        }
-        catch (error) { throw new Error("Cannot fetch user: " + id + " from the DB"); }
     }
     const fetchWorkshops = async () => {
         try {

@@ -1,7 +1,7 @@
 import { CartContextProvider } from "./store/cart-context";
 import Workshop from "./pages/Workshop";
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState /*, useEffect*/ } from "react";
 import ErrorPage from "./pages/ErrorPage";
 import Orders from "./pages/Orders";
 import Login from "./pages/Login";
