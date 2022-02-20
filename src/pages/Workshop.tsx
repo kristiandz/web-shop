@@ -21,7 +21,7 @@ function Workshop() {
     const [workshop, setWorkshop] = useState<any>({});
     const [allWorkshops, setAllWorkshops] = useState<any[]>([]);
     const [speaker, setSpeaker] = useState<any>({});
-
+    
     useEffect(() => {
         // GET all workshops and the specific one from the id and store it in the state
         const getWorkshop = async () => {
@@ -35,7 +35,8 @@ function Workshop() {
         };
         getWorkshop();
         getAllWorkshops();
-    }, [])
+    }, [id])
+
 
     useEffect(() => {
         // GET speaker from the database and store it in the state
@@ -47,9 +48,9 @@ function Workshop() {
     }, [workshop])
 
     // Try fetching the data, await for it to arrive from the databse, handle the errors if any arise, does not include status errors.
-    const fetchWorkshop = async (id:any) => {
+    const fetchWorkshop = async (id: any) => {
         try {
-            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/workshops/" + (id-1) +".json");
+            const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/workshops/" + (id - 1) + ".json");
             const data = res.json();
             return data;
         }
@@ -132,7 +133,7 @@ function Workshop() {
                                     </select>
                                     <div onClick={addToCart}><Button title="Add to Cart" width="12vw" /></div>
                                 </div>
-                                <span>Subtotal: {workshop?.price*workshop?.amount} EUR</span>
+                                <span>Subtotal: {workshop?.price * workshop?.amount} EUR</span>
                             </div>
                         </div>
                     </div>
