@@ -99,6 +99,7 @@
     overflow-x: hidden;
     height: auto;
     width: 90%;
+    scrollbar-width: none;
 }
 
 .cart__container::-webkit-scrollbar {
