@@ -23,19 +23,26 @@ function Navbar() {
             </div>
             <div className={styles.navbar__items}>
                 <div className={styles.navbar__items__user}>
-                    <FontAwesomeIcon icon={faUser} size="1x" />
-                    <Link to="/orders"><span>My orders</span></Link>
+                    {window.innerWidth < 600 ? <Link to="/orders"><FontAwesomeIcon icon={faUser} size="1x" /></Link> :
+                        <div className={styles.navbar__items__user}>
+                            <FontAwesomeIcon icon={faUser} size="1x" />
+                            <Link to="/orders"><span>My orders</span></Link>
+                        </div>
+                    }
                 </div>
                 <div onClick={cartContext.toggleCart} className={style}>
-                    <FontAwesomeIcon icon={faShoppingCart} size="1x" />
-                    {/* Display the cart status circle if the cart is not empty */}
-                    <span className={cartContext.cartLength !== 0 ? styles.navbar__items__cart__status : ""}></span>
-                    {/* Logic to render the correct content on navbar */}
-                    {/* Display nothing if the cart is empty otherwise display the length */}
-                    <span>{cartContext.cartLength === 0 ? "" : cartContext.cartLength}</span>
-                    {/* If the cart is not empty display either "workshops" if the length > 1, else "workshop" */}
-                    {cartContext.cartLength === 0 ? <span>Cart is empty</span> :
-                        <span>{cartContext.cartLength !== 1 ? "Workshops in Cart" : "Workshop in Cart"} </span>
+                    {window.innerWidth < 600 ? <FontAwesomeIcon icon={faShoppingCart} size="1x" /> :
+                        <>
+                            <FontAwesomeIcon icon={faShoppingCart} size="1x" />
+                            {/* Display the cart status circle if the cart is not empty */}
+                            <span className={cartContext.cartLength !== 0 ? styles.navbar__items__cart__status : ""}></span>
+                            {/* Logic to render the correct content on navbar */}
+                            {/* Display nothing if the cart is empty otherwise display the length */}
+                            <span>{cartContext.cartLength === 0 ? "" : cartContext.cartLength}</span>
+                            {/* If the cart is not empty display either "workshops" if the length > 1, else "workshop" */}
+                            {cartContext.cartLength === 0 ? <span>Cart is empty</span> :
+                                <span>{cartContext.cartLength !== 1 ? "Workshops in Cart" : "Workshop in Cart"} </span>}
+                        </>
                     }
                 </div>
             </div>

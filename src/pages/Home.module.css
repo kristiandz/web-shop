@@ -69,3 +69,53 @@
     border-bottom: 2px solid var(--light-blue);   
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+    .home{
+        padding-top: 10vh;
+    }
+    .home__main{
+        flex-direction: column;
+    }
+    .home__workshopContainer{
+        width: 100%;
+        padding: 0;
+        justify-content: center;
+    }
+    .home__header{
+        padding: 1vh 0;
+        padding-left: 5vw;
+    }
+    .home__loadMore{
+        padding: 3vh 0;
+        padding-right: 15%;
+    }
+}
+
+/* WIP */
+.home__categoryMenu{
+    position: relative;
+    padding: 3vh 0;
+    padding-bottom: 1vh;
+    padding-left: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 1;
+}
+.home__categoryMenu span {
+    font-weight: bold;
+    color: var(--blue);    
+}
+.home__categoryMenu span:hover {
+    color: var(--light-grey);
+    cursor: pointer;
+  }
+ .home__categoryMenu__dropdownContent{
+     display: none;
+     position: relative;
+  }
+  .home__categoryMenu:hover .home__categoryMenu__dropdownContent {
+    display: flex;
+    flex-direction: column;
+  }

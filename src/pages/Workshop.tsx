@@ -53,6 +53,7 @@ function Workshop() {
         };
         getWorkshop();
         getAllWorkshops();
+        window.scrollTo(0, 0);
     }, [id])
 
     useEffect(() => {
@@ -134,7 +135,7 @@ function Workshop() {
                         </div>
                         <div className={styles.workshop__main__tickets__container}>
                             <div className={styles.workshop__main__tickets}>
-                                <h3>Buy your ticket</h3>
+                                {window.innerWidth > 600 ? <h3>Buy your ticket</h3> : ""}
                                 <div className={styles.workshop__main__price}>
                                     <h3>{workshop.price},00</h3> <span>EUR</span>
                                 </div>
@@ -144,9 +145,9 @@ function Workshop() {
                                         <option value={3}>3</option><option value={4}>4</option>
                                         <option value={5}>5</option><option value={6}>6</option>
                                     </select>
-                                    <div onClick={addToCart}><Button title="Add to Cart" width="12vw" /></div>
+                                    <div className={styles.workshop__main__select__button} onClick={addToCart}><Button title="Add to Cart" width="80%" margin="0" /></div>
                                 </div>
-                                <span>Subtotal: {workshop?.price * workshop?.amount} EUR</span>
+                                {window.innerWidth > 600 ? <span>Subtotal: {workshop?.price * workshop?.amount} EUR</span> : ""}
                             </div>
                         </div>
                     </div>

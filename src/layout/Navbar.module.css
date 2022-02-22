@@ -18,15 +18,15 @@
 
 .navbar__items{
     display: flex;
-    width: 24vw;
-    padding-right: 9vw;
+    width: 25vw;
+    padding-right: 8vw;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .navbar__items span{
     font-weight: 700;
-    padding-left: 7px;
+    padding-left: 8px;
 }
 
 .navbar__items__user{
@@ -38,12 +38,12 @@
 
 .navbar__items__user a{
     text-decoration: none;
+    display: block;
     color: var(--black);
 }
 
 .navbar__items__cart{
     display: flex;
-    width: 15vw;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -64,10 +64,31 @@
 
 .navbar__items__cart__inactive{
     display: flex;
-    width: 15vw;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     opacity: 0;
     transition: 0.5s;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .navbar{
+        height: 10vh;
+    }
+    .navbar__items{
+        width: 17vw;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .navbar__items{
+        width: 55vw;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1200px) {
+    .navbar__items{
+        width: 33vw;
+    }
 }

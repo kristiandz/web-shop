@@ -5,6 +5,7 @@ import DataRow from "../components/DataRow";
 import styles from "./Orders.module.css";
 import Sidebar from "../layout/Sidebar";
 import { Link } from "react-router-dom";
+import Navbar from "../layout/Navbar";
 
 interface IOrders {
     products: [],
@@ -21,7 +22,7 @@ function Orders() {
         // GET workshops and categories from the database and store it in the state
         const getWorkshops = async () => {
             const ordersFromServer = await fetchOrders();
-            let array:IOrders[] = [];
+            let array: IOrders[] = [];
             Object.keys(ordersFromServer).forEach(function (key: string) {
                 array.push(ordersFromServer[key]);
             });
@@ -47,7 +48,7 @@ function Orders() {
         // Currently only rendering id and amount from the orders in database, since we need to setup it differently from the given task
         // For now it serves to simply see the basic updates to the DB such as ID and Total price.
         <div className={styles.orders}>
-            <Sidebar />
+            {window.innerWidth > 900 ? <Sidebar /> : <Navbar />}
             <div className={styles.orders__container}>
                 <div className={styles.orders__header}>
                     <div className={styles.orders__return}>
@@ -57,13 +58,16 @@ function Orders() {
                     </div>
                     <h1>My orders</h1>
                 </div>
-                <div className={styles.orders__desc}>
-                    <span>NUMBER</span>
-                    <span>DATE</span>
-                    <span>TIME</span>
-                    <span>PRICE</span>
-                    <span>ACTIONS</span>
-                </div>
+                {window.innerWidth > 900 ?
+                    <div className={styles.orders__desc}>
+                        <span>NUMBER</span>
+                        <span>DATE</span>
+                        <span>TIME</span>
+                        <span>PRICE</span>
+                        <span>ACTIONS</span>
+                    </div>
+                    : ""
+                }
                 {!orders[0] ? <h5>No orders yet...</h5> :
                     <>
                         {orders.map((element: IOrders, i: number) => { return (<DataRow value={element} id={i} key={i} />) })}

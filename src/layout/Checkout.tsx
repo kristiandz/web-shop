@@ -67,6 +67,7 @@ function Checkout() {
         cartContext.toggleCheckout();
         cartContext.toggleCart();
         cartContext.clearCart();
+        window.scrollTo(0, 0);
     }
 
     if (!isCheckoutSuccessfull) {
@@ -137,8 +138,8 @@ function Checkout() {
                     <div className={styles.checkout__container__success}>
                         <h2>Thank you</h2>
                         <span>Esse cillum incididunt qui do ea et sunt proident ut et qui nulla enim. Ad excepteur in amet adipisicing sint.</span>
-                        <div onClick={returnHome}>
-                            <Button title="Back to shop" width="15vw" margin="0" />
+                        <div className={styles.checkout__button__container} onClick={returnHome}>
+                            <Button title="Back to shop" width="90%" margin="0" />
                         </div>
                     </div>
                 </div>

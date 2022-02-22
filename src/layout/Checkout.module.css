@@ -6,7 +6,7 @@
   margin-top: -9vh;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   background-color: rgba(0, 0, 0, 0.596);
 }
 
@@ -15,7 +15,7 @@
     justify-content: center;
     background-color: var(--white);
     border-radius: 12px;
-    width: 38vw;
+    width: 35vw;
 }
 
 .checkout__container {
@@ -60,7 +60,7 @@
   line-height: 125%;
   color: var(--light-grey);
   width: 70%;
-margin: 0;
+  margin: 0;
 }
 
 .checkout__container h2 {
@@ -147,7 +147,7 @@ margin: 0;
 
 .checkout__checkbox__bg {
   position: relative;
-  right: 85px;
+  right: 84px;
   width: 15px;
   height: 25px;
   background-color: var(--light-blue);
@@ -176,4 +176,43 @@ margin: 0;
 .checkout__form button:hover {
   background-color: var(--light-yellow);
   cursor: pointer;
+}
+
+.checkout__button__container{
+  width: 80%;
+}
+
+@media only screen and (max-width: 600px) {
+  .checkout {
+      border-radius: 0px;
+      width: 100vw;
+      overflow: scroll;
+      padding: 12vh 0
+  }
+  .checkout__container__success{
+    justify-content: center;
+    height: 100vh;
+  }
+  .checkout__container__success span{
+    margin: 4vh 0;
+    width: 95%;
+  }
+  .checkout__control {
+    padding-top: 1vh;
+  }
+  .checkout__container {
+    width: 85%;
+}
+}
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+  .checkout {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1200px) {
+  .checkout {
+    width: 42vw;
+  }
 }

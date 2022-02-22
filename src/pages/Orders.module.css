@@ -53,3 +53,32 @@
     padding-right: 6%;
     padding-bottom: 8px;
 }
+
+@media only screen and (max-width: 600px) {
+    .orders{
+        margin-top: 10vh;
+    }
+    .orders__container{
+        padding-top: 2vh;
+        margin-left: 0;
+        width: 100%;
+    }
+    .orders__header h1{
+        margin-top: 1vh;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .orders{
+        margin-top: 9vh;
+    }
+    .orders__container{
+        padding-top: 2vh;
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1200px) {
+}

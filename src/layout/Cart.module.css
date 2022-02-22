@@ -5,9 +5,9 @@
     align-items: center;
     background-color: var(--yellow);
     transition: 1s;
-    width: 23vw;
+    width: 23.5vw;
     height: 100vh;
-    right: -23vw;
+    right: -23.5vw;
     top: 0;
 }
 
@@ -19,7 +19,7 @@
     background-color: var(--white);
     transition: 1s;
     height: 100vh;
-    width: 23vw;
+    width: 23.5vw;
     right: 0;
     top: 0;
     box-shadow: 15px 0 20px 7px rgb(0, 0, 0);
@@ -105,4 +105,35 @@
     display: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .cart{
+        width: 100vw;
+        right: -100vw;
+    }
+    .cart__active{
+        width: 100vw;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .cart{
+        width: 42vw;
+        right: -42vw;
+    }
+    .cart__active{
+        width: 42vw;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1200px) {
+    .cart{
+        width: 43vw;
+        right: -43vw;
+    }
+    .cart__active{
+        width: 30vw;
+    }
 }

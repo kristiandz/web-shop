@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import WorkshopCard from "../components/WorkshopCard";
 import CategoryRow from "../components/CategoryRow";
+import { getRow } from "../components/CategoryRow";
 import CartContext from "../store/cart-context";
 import Spinner from "../components/Spinner";
 import Checkout from "../layout/Checkout";
@@ -27,7 +28,7 @@ function Home() {
     const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setselectedCategories] = useState("All");
     // Display the first 9 workshops, later on load more and change the state
-    const [wsRange, setWsRange] = useState<{start:number,end:number}>({ start: 0, end: 9 });
+    const [wsRange, setWsRange] = useState<{ start: number, end: number }>({ start: 0, end: 9 });
 
     useEffect(() => {
         // GET workshops and categories from the database and store it in the state
@@ -90,16 +91,25 @@ function Home() {
             {cartContext.checkoutActive ? <Checkout /> : ""}
             {/* Main layout */}
             <div className={styles.home__main}>
-                {/* Category sidebar */}
-                <div className={styles.home__workshopSideMenu}>
-                    <div className={styles.home__workshopSideMenu__fixed}>
-                        <h5>Filter by category: </h5>
-                        {/* "All" category is rendered with <CategoryRow/> if it doesnt contain props */}
-                        <CategoryRow title="All" selection={setselectedCategories} />
-                        {/* Don't display anything if the categories are not loaded. Using the index for the key for simplicity */}
-                        {!categories[0] ? "" : categories.map((element, i) => { return (<CategoryRow selection={setselectedCategories} title={element} key={i} />) })}
+                {/* Category sidebar/menu, depending on the screen size */}
+                {window.innerWidth < 600 ?
+                    <div className={styles.home__categoryMenu}>
+                        <span>Category</span>
+                        <div className={styles.home__categoryMenu__dropdownContent}>
+                        <span onClick={() => setselectedCategories("All")}>All</span>
+                            {categories.map((element, i) => { return (<span key={i} onClick={() => setselectedCategories(element)}>{getRow(element)}</span>) })}
+                        </div>
                     </div>
-                </div>
+                    :
+                    <div className={styles.home__workshopSideMenu}>
+                        <div className={styles.home__workshopSideMenu__fixed}>
+                            <h5>Filter by category: </h5>
+                            {/* "All" category is rendered with <CategoryRow/> if it doesnt contain props */}
+                            <CategoryRow title="All" selection={setselectedCategories} />
+                            {/* Don't display anything if the categories are not loaded. Using the index for the key for simplicity */}
+                            {!categories[0] ? "" : categories.map((element, i) => { return (<CategoryRow selection={setselectedCategories} title={element} key={i} />) })}
+                        </div>
+                    </div>}
                 {/* Workshops and information */}
                 <div className={styles.home__workshopContainer}>
                     <div className={styles.home__header}>

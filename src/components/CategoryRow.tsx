@@ -4,7 +4,7 @@ import styles from "./CategoryRow.module.css";
 
 interface ICategoryRow {
     title: string,
-    selection: (name:string) => void
+    selection: (name: string) => void
 }
 
 function CategoryRow(props: ICategoryRow) {
@@ -61,7 +61,6 @@ function CategoryRow(props: ICategoryRow) {
 }
 export default CategoryRow;
 
-
 // Helper function to return the category icon to any component that provides category name
 export function getCategoryIcon(title: string) {
 
@@ -76,5 +75,22 @@ export function getCategoryIcon(title: string) {
             return faCode;
         default:
             return faBolt;
+    }
+}
+
+// Helper function to return the category icon to any component that provides category name
+export function getRow(title:string) {
+
+    switch (title) {
+        case "marketing":
+            return "Marketing";
+        case "design":
+            return "Design";
+        case "frontend":
+            return "Frontend";
+        case "backend":
+            return "Backend";
+        default:
+            return "All";
     }
 }

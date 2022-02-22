@@ -33,3 +33,9 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #494949;
 }
+
+@media only screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}

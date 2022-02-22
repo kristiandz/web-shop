@@ -1,4 +1,5 @@
 import { faClock, faCalendarTimes } from "@fortawesome/free-regular-svg-icons";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CartContext from "../store/cart-context";
 import { getCategoryIcon } from "./CategoryRow";
@@ -19,7 +20,7 @@ interface IWorkshops {
     amount: number
 }
 
-function WorkshopCard(props: {value: IWorkshops}) {
+function WorkshopCard(props: { value: IWorkshops }) {
 
     const cartContext = useContext(CartContext);
     const history = useNavigate();
@@ -68,8 +69,10 @@ function WorkshopCard(props: {value: IWorkshops}) {
                 </div>
             </div>
             {/* Wrapping the button in a div so we can use the onClick callback, we are adding the workshop to the cart here by passing the data to the context state */}
-            <div onClick={addToCart}>
-                <Button title="Add to Cart" width="14vw" margin="2vh" />
+            <div className={styles.workshopCard__buttonContainer} onClick={addToCart}>
+                {window.innerWidth < 600 ? <div className={styles.workshopCard__buttonContainer__icon}><FontAwesomeIcon icon={faShoppingCart} size="1x" /></div> :
+                    <Button title="Add to Cart" width="70%" margin="0" />
+                }
             </div>
         </div>
     );

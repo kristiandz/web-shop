@@ -27,3 +27,14 @@
     font-size: 14px;
     padding-left: 15px;
 }
+
+@media only screen and (max-width: 900px) {
+    .dataRow__compact{
+        display: flex;
+        flex-direction: column;
+    }
+    .dataRow__compact__id{
+        color: var(--light-grey);
+        font-size: 14px;
+    }
+}

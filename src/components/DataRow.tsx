@@ -18,13 +18,22 @@ function DataRow(props: { id: number, value: IOrderInterface }) {
         // Passing the color here to achieve the alternating row color effect, default is set, override if the prop is defined
         <div className={styles.dataRow} style={{ background: color }}>
             <div className={styles.dataRow__content}>
-                <span>00000000{props?.id}</span>
-                <span>{props?.value.date}</span>
-                <span>{props?.value.time} sati</span>
+                {window.innerWidth < 900 ?
+                    <div className={styles.dataRow__compact}>
+                        <span>{props?.value.date}</span>
+                        <span className={styles.dataRow__compact__id}>nr.0000000{props?.id}</span>
+                    </div>
+                    :
+                    <>
+                        <span>0000000{props?.id}</span>
+                        <span>{props?.value.date}</span>
+                    </>
+                }
+                {window.innerWidth > 900 ? <span>{props?.value.time} sati</span> : ""}
                 <span>{props?.value.total},00 HRK</span>
                 <div>
                     <Button title="Details" height="37px" margin="0" />
-                    <Link to="#">Delete</Link>
+                    {window.innerWidth > 900 ? <Link to="#">Delete</Link> : ""}
                 </div>
             </div>
         </div>

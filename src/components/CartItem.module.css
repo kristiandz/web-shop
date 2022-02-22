@@ -76,3 +76,21 @@
     margin-right: 9px;
     outline: none;
 }
+
+@media only screen and (max-width: 600px) {
+    .cartItem{
+        height: 20vh;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width:900px) {
+    .cartItem{
+        height: 17vh;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width:1200px) {
+    .cartItem{
+        height: 17vh;
+    }
+}
