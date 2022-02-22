@@ -184,7 +184,7 @@
 
 @media only screen and (max-width: 600px) {
   .checkout {
-      border-radius: 0px;
+      border-radius: 0;
       width: 100vw;
       overflow: scroll;
       padding: 12vh 0
