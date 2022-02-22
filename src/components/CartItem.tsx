@@ -4,15 +4,27 @@ import CartContext from "../store/cart-context";
 import styles from "./CartItem.module.css";
 import { useContext } from "react";
 
-function CartItem(props: any) {
+interface IWorkshop {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
+
+function CartItem(props: {data: IWorkshop}) {
 
     const cartContext = useContext(CartContext);
     const defaultImage = "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg";
 
     // Get the updated selection from the dropdown and update the workshop in the context state
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         let cartItem = props?.data
-        cartItem.amount = e.target.value;
+        cartItem.amount = +e.target.value;
         cartContext.updateWorkshop(cartItem);
     };
 
@@ -33,7 +45,7 @@ function CartItem(props: any) {
                 </div>
                 <div>
                     {/* Select the amount of tickets we want to buy for each workshop */}
-                    <select value={props?.data.amount} className={styles.cartItem__dropdown} onChange={handleChange} >
+                    <select aria-label="select" value={props?.data.amount} className={styles.cartItem__dropdown} onChange={handleChange} >
                         <option value={1}>1</option><option value={2}>2</option>
                         <option value={3}>3</option><option value={4}>4</option>
                         <option value={5}>5</option><option value={6}>6</option>

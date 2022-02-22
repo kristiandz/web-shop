@@ -7,13 +7,17 @@ import styles from "./Login.module.css";
 import eye from "../assets/eye.png";
 import { useRef } from "react";
 
-function Login(props: any) {
+interface ILogin {
+    login: (value: boolean) => void
+}
+
+function Login(props: ILogin) {
 
     const history = useNavigate();
-    const passwordInputRef = useRef<any>(null);
-    const nameInputRef = useRef<any>(null);
+    const passwordInputRef = useRef<HTMLInputElement>(null);
+    const nameInputRef = useRef<HTMLInputElement>(null);
 
-    const handleLogin = async (event: any) => {
+    const handleLogin = async (event: React.MouseEvent<HTMLElement>) => {
         event.preventDefault();
         const name = nameInputRef.current?.value;
         const password = passwordInputRef.current?.value;

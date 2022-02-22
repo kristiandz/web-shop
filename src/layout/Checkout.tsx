@@ -7,19 +7,31 @@ import { useContext, useState } from "react";
 import styles from "./Checkout.module.css";
 import Button from '../components/Button';
 
+interface IWorkshops {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
+
 function Checkout() {
 
     const history = useNavigate();
     const cartContext = useContext(CartContext);
-    const [isChecked, setIsChecked] = useState<any>(false);
-    const [isCheckoutSuccessfull, setIsCheckoutSuccessfull] = useState<any>(false);
+    const [isChecked, setIsChecked] = useState<boolean>(false);
+    const [isCheckoutSuccessfull, setIsCheckoutSuccessfull] = useState<boolean>(false);
 
     // Checkbox toggle
     const handleToggle = () => {
         setIsChecked(!isChecked);
     }
 
-    const onSubmit = async (event: any) => {
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         // Prevent default browser submit
         event.preventDefault();
 
@@ -29,7 +41,7 @@ function Checkout() {
 
         // Caculate the total price we need to checkout
         let price = 0;
-        cartContext.cartItems.forEach((element: any) => {
+        cartContext.cartItems.forEach((element: IWorkshops) => {
             price += element.amount * element.price;
         });
         // Set time and date for orders preview

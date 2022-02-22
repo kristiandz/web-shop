@@ -2,12 +2,17 @@ import styles from "./DataRow.module.css";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
+interface IOrderInterface {
+    date: string,
+    time: string,
+    total: number
+}
 // Data row for the extended assignment used for order previews etc.
 
-function DataRow(props: any) {
+function DataRow(props: { id: number, value: IOrderInterface }) {
 
     let color = "var(--lighter-grey)";
-    props?.id % 2 ? color = "var(--white)" : color = "var(--lighter-grey)"; 
+    props?.id % 2 ? color = "var(--white)" : color = "var(--lighter-grey)";
 
     return (
         // Passing the color here to achieve the alternating row color effect, default is set, override if the prop is defined

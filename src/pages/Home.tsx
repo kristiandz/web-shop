@@ -8,14 +8,26 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import styles from "./Home.module.css";
 
+interface IWorkshops {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
+
 function Home() {
 
     const cartContext = useContext(CartContext);
-    const [workshops, setWorkshops] = useState<any[]>([]);
-    const [categories, setCategories] = useState<any[]>([]);
+    const [workshops, setWorkshops] = useState<IWorkshops[]>([]);
+    const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setselectedCategories] = useState("All");
     // Display the first 9 workshops, later on load more and change the state
-    const [wsRange, setWsRange] = useState<any>({ start: 0, end: 9 });
+    const [wsRange, setWsRange] = useState<{start:number,end:number}>({ start: 0, end: 9 });
 
     useEffect(() => {
         // GET workshops and categories from the database and store it in the state
@@ -83,7 +95,7 @@ function Home() {
                     <div className={styles.home__workshopSideMenu__fixed}>
                         <h5>Filter by category: </h5>
                         {/* "All" category is rendered with <CategoryRow/> if it doesnt contain props */}
-                        <CategoryRow selection={setselectedCategories} />
+                        <CategoryRow title="All" selection={setselectedCategories} />
                         {/* Don't display anything if the categories are not loaded. Using the index for the key for simplicity */}
                         {!categories[0] ? "" : categories.map((element, i) => { return (<CategoryRow selection={setselectedCategories} title={element} key={i} />) })}
                     </div>

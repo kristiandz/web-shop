@@ -2,7 +2,12 @@ import { faBroom, faCode, faTable, faBolt } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./CategoryRow.module.css";
 
-function CategoryRow(props: any) {
+interface ICategoryRow {
+    title: string,
+    selection: (name:string) => void
+}
+
+function CategoryRow(props: ICategoryRow) {
 
     // If the props are not passed, use this as default for the "All" category"
     let title = "All";

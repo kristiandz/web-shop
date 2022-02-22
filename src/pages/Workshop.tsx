@@ -11,16 +11,34 @@ import Footer from "../layout/Footer";
 import Navbar from "../layout/Navbar";
 import WorkshopCard from "../components/WorkshopCard";
 
-function Workshop() {
+interface IWorkshop {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
 
+interface ISpeaker {
+    id: number,
+    name: string,
+    password: string,
+    email: string,
+}
+
+function Workshop() {
     // Get the argument from the URL, so we can fetch the specific workshop
     let { id } = useParams();
     const cartContext = useContext(CartContext);
     const defaultImage = "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg";
 
-    const [workshop, setWorkshop] = useState<any>({});
-    const [allWorkshops, setAllWorkshops] = useState<any[]>([]);
-    const [speaker, setSpeaker] = useState<any>({});
+    const [workshop, setWorkshop] = useState<IWorkshop>({ id: 0, title: "", desc: "", price: 0, date: "", category: "", userId: 0, imageUrl: "", amount: 0 });
+    const [allWorkshops, setAllWorkshops] = useState<IWorkshop[]>([]);
+    const [speaker, setSpeaker] = useState<ISpeaker>({ id: 0, name: "", password: "", email: "" });
 
     useEffect(() => {
         // GET all workshops and the specific one from the id and store it in the state
@@ -77,7 +95,7 @@ function Workshop() {
     }
 
     // Get the updated selection from the dropdown and update the workshop in the context state
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         let cartItem = workshop
         cartItem.amount = parseInt(e.target.value); // Just in case
         setWorkshop({ ...cartItem });

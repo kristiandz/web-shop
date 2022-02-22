@@ -6,6 +6,18 @@ import Button from "../components/Button";
 import styles from "./Cart.module.css";
 import { useContext } from "react";
 
+interface IWorkshop {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
+
 function Cart() {
 
     const cartContext = useContext(CartContext);
@@ -16,7 +28,7 @@ function Cart() {
 
     // Caculate the total price we need to checkout
     let total = 0;
-    cartContext.cartItems.forEach((element: any) => {
+    cartContext.cartItems.forEach((element: IWorkshop) => {
         total += element.amount * element.price;
     });
 
@@ -35,7 +47,7 @@ function Cart() {
             </div>
             {/* Render every cart item from the context state and pass in the props to display it further */}
             <div className={styles.cart__container}>
-                {cartContext.cartItems.map((element: any) => { return (<CartItem data={element} key={element.id} />) })}
+                {cartContext.cartItems.map((element: IWorkshop) => { return (<CartItem data={element} key={element.id} />) })}
             </div>
             {/* Hardcoding the currency here, since we don't have a value to fetch from database */}
             <div className={styles.cart__checkout}>
@@ -47,7 +59,6 @@ function Cart() {
                 {/* Wrapping the Button component inside a div so we can use onClick and open the checkout by calling the toggle from context */}
                 <div onClick={cartContext.toggleCheckout}>
                     <Button
-                        className={styles.cart__checkout__button}
                         margin="0" title="Checkout"
                         width="100%" height="50px"
                         background="var(--blue)"

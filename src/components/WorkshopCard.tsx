@@ -7,7 +7,19 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import Button from "./Button";
 
-function WorkshopCard(props: any) {
+interface IWorkshops {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
+
+function WorkshopCard(props: {value: IWorkshops}) {
 
     const cartContext = useContext(CartContext);
     const history = useNavigate();

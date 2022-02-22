@@ -1,14 +1,26 @@
 import { createContext, useState } from "react";
 
+interface IWorkshopItem {
+    id: number,
+    title: string,
+    desc: string,
+    price: number,
+    date: string,
+    category: string,
+    userId: number,
+    imageUrl: string,
+    amount: number
+}
+
 // Interface for the context we are making
 interface ContextInterface {
-    cartItems: any,
+    cartItems: IWorkshopItem[],
     cartLength: number,
     cartActive: boolean,
     checkoutActive: boolean,
-    addToCart: (workshop: any) => void,
+    addToCart: (workshop: IWorkshopItem) => void,
     removeFromCart: (workshopID: number) => void,
-    updateWorkshop: (workshop: any) => void,
+    updateWorkshop: (workshop: IWorkshopItem) => void,
     toggleCheckout: () => void,
     toggleCart: () => void,
     isInCart: (workshopID: number) => boolean
@@ -38,12 +50,12 @@ export function CartContextProvider(props: any) {
     const [cartActive, setCartActive] = useState(false);
 
     // Push the new workshop to the state
-    function addToCartHandler(workshop: any) {
+    function addToCartHandler(workshop: IWorkshopItem) {
         setWorkshops([...workshops, workshop]);
     }
 
     // Remove the matching workshop from the state
-    function removeFromCartHandler(workshopID: any) {
+    function removeFromCartHandler(workshopID: number) {
         setWorkshops((prev) => {
             return prev.filter((workshop) => workshop.id !== workshopID);
         });
@@ -51,7 +63,7 @@ export function CartContextProvider(props: any) {
 
     // Update the specific workshop in the state, we are sending the new workshop here with updated ticket quantity
     // Find the index of matching id and then replace the workshop in context with the new prop, push new state
-    function updateWorkshopHandler(workshop: any) {
+    function updateWorkshopHandler(workshop: IWorkshopItem) {
         const index = workshops.findIndex((el) => el.id === workshop.id)
         const newWorkshops = [...workshops];
         newWorkshops[index] = workshop;
@@ -70,7 +82,7 @@ export function CartContextProvider(props: any) {
     }
 
     // Is the workshop already in the context state, we are using this to prevent pushing the same workshop multiple times with the same key
-    function isInCartHandler(workshopID: any) {
+    function isInCartHandler(workshopID: number) {
         return workshops.some((workshop) => workshop.id === workshopID);
     }
 

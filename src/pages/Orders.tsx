@@ -6,16 +6,23 @@ import styles from "./Orders.module.css";
 import Sidebar from "../layout/Sidebar";
 import { Link } from "react-router-dom";
 
+interface IOrders {
+    products: [],
+    total: number,
+    time: string,
+    date: string
+}
+
 function Orders() {
 
-    const [orders, setOrders] = useState<any[]>([]);
+    const [orders, setOrders] = useState<IOrders[]>([]);
 
     useEffect(() => {
         // GET workshops and categories from the database and store it in the state
         const getWorkshops = async () => {
             const ordersFromServer = await fetchOrders();
-            let array:any=[];
-            Object.keys(ordersFromServer).forEach(function (key: any) {
+            let array:IOrders[] = [];
+            Object.keys(ordersFromServer).forEach(function (key: string) {
                 array.push(ordersFromServer[key]);
             });
             setOrders(array);
@@ -59,7 +66,7 @@ function Orders() {
                 </div>
                 {!orders[0] ? <h5>No orders yet...</h5> :
                     <>
-                        {orders.map((element:any,i:any) => { return (<DataRow value={element} id={i} key={i} />) })}
+                        {orders.map((element: IOrders, i: number) => { return (<DataRow value={element} id={i} key={i} />) })}
                     </>
                 }
             </div>
