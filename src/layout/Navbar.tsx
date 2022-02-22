@@ -31,7 +31,12 @@ function Navbar() {
                     }
                 </div>
                 <div onClick={cartContext.toggleCart} className={style}>
-                    {window.innerWidth < 600 ? <FontAwesomeIcon icon={faShoppingCart} size="1x" /> :
+                    {window.innerWidth < 600 ?
+                        <div>
+                            <FontAwesomeIcon icon={faShoppingCart} size="1x" />
+                            <span className={cartContext.cartLength !== 0 ? styles.navbar__items__cart__status : ""}></span>
+                        </div> 
+                        :
                         <>
                             <FontAwesomeIcon icon={faShoppingCart} size="1x" />
                             {/* Display the cart status circle if the cart is not empty */}
