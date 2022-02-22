@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { getCategoryIcon } from "../components/CategoryRow";
 import { useState, useEffect, useContext } from "react";
+import WorkshopCard from "../components/WorkshopCard";
 import { useParams, Link } from 'react-router-dom'
 import CartContext from "../store/cart-context";
 import styles from "./Workshop.module.css";
 import Button from "../components/Button";
 import Footer from "../layout/Footer";
 import Navbar from "../layout/Navbar";
-import WorkshopCard from "../components/WorkshopCard";
+import Checkout from "../layout/Checkout";
 
 interface IWorkshop {
     id: number,
@@ -108,6 +109,7 @@ function Workshop() {
 
     return (
         <div className={styles.workshopLayout}>
+            {cartContext.checkoutActive ? <Checkout /> : ""}
             <Navbar />
             <div className={styles.workshop}>
                 <div className={styles.workshop__side}>
