@@ -4,10 +4,10 @@ This project was built using React in Typscript. This repo includes JSON Server 
 Currently the code is set to fetch the data from a Firebase REST API and the application is hosted on CentOS/Apache, the live preview is available at https://tinnel-workshops.tk/
 
 ## Current status
-The required functionality of the application from the user stories has been implemented, all the functions and components should work without problems. At last testing, all the functionalities worked fine on multiple browsers, what is lacking is work to CSS, the application is not responsive to small and medium screens tho, it was built so that it wont take long to implement full responsiveness.
+The required functionality of the application from the user stories has been implemented, all the functions and components should work without problems. At last testing, all the functionalities worked fine on multiple browsers, the responsive design is also good.
 
 ## TODO
-- Responsiveness for all screen sizes
+- Pixel perfect
 - Run the CSS in autoprefixer for better compatibility
 - Unit testing, integration testing
 
