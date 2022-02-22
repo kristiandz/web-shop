@@ -61,7 +61,7 @@ function Workshop() {
         // Moving the fetch inside since we depend on the workshop
         const fetchSpeaker = async () => {
             try {
-                const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + workshop?.userId + ".json");
+                const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + (workshop?.userId-1) + ".json");
                 const data = await res.json();
                 setSpeaker(data);
             }
