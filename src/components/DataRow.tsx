@@ -30,7 +30,7 @@ function DataRow(props: { id: number, value: IOrderInterface }) {
                     </>
                 }
                 {window.innerWidth > 900 ? <span>{props?.value.time} sati</span> : ""}
-                <span>{props?.value.total},00 HRK</span>
+                <span>{props?.value.total},00 EUR</span>
                 <div>
                     <Button title="Details" height="37px" margin="0" />
                     {window.innerWidth > 900 ? <Link to="#">Delete</Link> : ""}

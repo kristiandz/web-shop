@@ -24,7 +24,7 @@ function Checkout() {
     const history = useNavigate();
     const cartContext = useContext(CartContext);
     const [isChecked, setIsChecked] = useState<boolean>(false);
-    const [isCheckoutSuccessfull, setIsCheckoutSuccessfull] = useState<boolean>(false);
+    const [isCheckoutSuccessful, setIsCheckoutSuccessful] = useState<boolean>(false);
 
     // Checkbox toggle
     const handleToggle = () => {
@@ -56,7 +56,7 @@ function Checkout() {
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(checkout)
         })
-            .then(() => setIsCheckoutSuccessfull(true))
+            .then(() => setIsCheckoutSuccessful(true))
             .catch((error) => console.log(error.message));
     }
 
@@ -70,7 +70,7 @@ function Checkout() {
         window.scrollTo(0, 0);
     }
 
-    if (!isCheckoutSuccessfull) {
+    if (!isCheckoutSuccessful) {
         return (
             <div className={styles.checkoutScreen}>
                 <div className={styles.checkout}>
