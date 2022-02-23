@@ -131,8 +131,8 @@
 
 @media only screen and (min-width: 900px) and (max-width:1200px) {
     .cart{
-        width: 43vw;
-        right: -43vw;
+        width: 30vw;
+        right: -30vw;
     }
     .cart__active{
         width: 30vw;
