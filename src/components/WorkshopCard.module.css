@@ -147,7 +147,13 @@
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width:900px) {
+@media only screen and (min-width: 600px) and (max-width:680px) {
+    .workshopCard{
+        width: 55vw;
+    }
+}
+
+@media only screen and (min-width: 680px) and (max-width:900px) {
     .workshopCard{
         width: 35vw;
     }
