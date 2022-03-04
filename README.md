@@ -7,12 +7,8 @@ Currently the code is set to fetch the data from a Firebase REST API and the app
 The required functionality of the application from the user stories has been implemented, all the functions and components should work without problems. At last testing, all the functionalities worked fine on multiple browsers, the responsive design is also good.
 
 ## TODO
-- Pixel perfect
-- Run the CSS in autoprefixer for better compatibility
 - Unit testing, integration testing
-
-
- Development will continue from this point on to finish what I have already planned to complete.
+- Optimize code
   
 ## Available Scripts
 In the project directory, you can run:
