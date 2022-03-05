@@ -121,16 +121,6 @@
       "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg"
     },
     {
-      "id": 6,
-      "title": "Be nice! Help the person who hacks your servers to get data",
-      "desc": "Even in the age where data and privacy became mainstream buzzwords, some agencies and developers are still not paying attention. Primary AWS keys are often shared among devs, SSH keys from former employees are still being kept on servers, credentials are sometimes stored into .env files, or even worse - config files. Let's talk about data and privacy - again. The 27th edition of Tinel is scheduled for the 22nd of August, featuring an interesting talk by Code4hire's founder Srdjan Vranac who will address the technical side of data storage. Srdjan thinks that secrets and credentials management is probably the most overlooked aspect of any app, so we got him to Tinel to show you a few useful tips, tricks and tools that can help you achieve a decent level of security on your application.",
-      "price": 500,
-      "date": "2020-02-21T13:51:50.417-07:00",
-      "category": "backend",
-      "userId": 5,
-      "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg"
-    },
-    {
       "id": 5,
       "title": "Leadership as a joke",
       "desc": "Cal Evans is author of five Leanpub books, Signaling PHP, Iterating PHP Iterators, Going Pro, Culture of Respect, and Uncle Cal’s Career Advice to Developers. After 15 years of work with MySQL and PHP - he switched his focus on building (better) developers through dev trainings in EICC, Zend, and Kony Solutions.",
@@ -138,6 +128,16 @@
       "date": "2020-04-27T13:51:50.417-07:00",
       "category": "backend",
       "userId": 6,
+      "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg"
+    },
+    {
+      "id": 6,
+      "title": "Be nice! Help the person who hacks your servers to get data",
+      "desc": "Even in the age where data and privacy became mainstream buzzwords, some agencies and developers are still not paying attention. Primary AWS keys are often shared among devs, SSH keys from former employees are still being kept on servers, credentials are sometimes stored into .env files, or even worse - config files. Let's talk about data and privacy - again. The 27th edition of Tinel is scheduled for the 22nd of August, featuring an interesting talk by Code4hire's founder Srdjan Vranac who will address the technical side of data storage. Srdjan thinks that secrets and credentials management is probably the most overlooked aspect of any app, so we got him to Tinel to show you a few useful tips, tricks and tools that can help you achieve a decent level of security on your application.",
+      "price": 500,
+      "date": "2020-02-21T13:51:50.417-07:00",
+      "category": "backend",
+      "userId": 5,
       "imageUrl": "https://secure.meetupstatic.com/photos/event/2/d/8/e/highres_482651662.jpeg"
     },
     {
