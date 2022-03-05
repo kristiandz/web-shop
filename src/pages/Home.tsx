@@ -25,6 +25,7 @@ function Home() {
 
     const cartContext = useContext(CartContext);
     const [workshops, setWorkshops] = useState<IWorkshops[]>([]);
+    const [filteredWorkshops, setFilteredWorkshops] = useState<IWorkshops[]>([]);
     const [categories, setCategories] = useState<string[]>([]);
     const [selectedCategory, setselectedCategories] = useState("All");
     // Display the first 9 workshops, later on load more and change the state
@@ -42,7 +43,14 @@ function Home() {
         }
         getWorkshops();
         getCategories();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        // Sort and slice the workshops that should be displayed by applying the filters
+        setFilteredWorkshops(workshops.filter((el) => el.category === selectedCategory || selectedCategory === "All")
+            .slice(wsRange.start, wsRange.end)
+            .sort((a, b) => { return Date.parse(b.date) - Date.parse(a.date) }));
+    }, [selectedCategory, workshops, wsRange]);
 
     // Try fetching the data, await for it to arrive from the databse, handle the errors if any arise, does not include status errors.
     const fetchWorkshops = async () => {
@@ -64,13 +72,6 @@ function Home() {
         catch (error) {
             throw new Error("Cannot fetch the categories from the DB");
         }
-    }
-
-    // Sort and slice the workshops that should be displayed by applying the filters
-    function sortWorkshops() {
-        return workshops.filter((el) => el.category === selectedCategory || selectedCategory === "All")
-            .slice(wsRange.start, wsRange.end)
-            .sort((a, b) => { return Date.parse(b.date) - Date.parse(a.date) });
     }
 
     const loadMore = () => {
@@ -96,7 +97,7 @@ function Home() {
                     <div className={styles.home__categoryMenu}>
                         <span>Category</span>
                         <div className={styles.home__categoryMenu__dropdownContent}>
-                        <span onClick={() => setselectedCategories("All")}>All</span>
+                            <span onClick={() => setselectedCategories("All")}>All</span>
                             {categories.map((element, i) => { return (<span key={i} onClick={() => setselectedCategories(element)}>{getRow(element)}</span>) })}
                         </div>
                     </div>
@@ -114,12 +115,12 @@ function Home() {
                 <div className={styles.home__workshopContainer}>
                     <div className={styles.home__header}>
                         <h2>Workshops</h2>
-                        {/* Get the length of the filtered array, should store the length instead of calling the function again for better performance! */}
-                        <span>Broj radionica: {sortWorkshops().length}</span>
+                        {/* Get the length of the filtered array */}
+                        <span>Broj radionica: {filteredWorkshops.length}</span>
                     </div>
                     <div className={styles.home__workshops}>
-                        {/* Get the sorted array and then map it to render all workshop cards */}
-                        {sortWorkshops().map((element) => { return (<WorkshopCard value={element} key={element.id} />) })}
+                        {/* Get the filtered array and then map it to render all workshop cards */}
+                        {filteredWorkshops.map((element) => { return (<WorkshopCard value={element} key={element.id} />) })}
                     </div>
                     {/* Load more workshops, wrapping it for finer css control */}
                     <div className={styles.home__loadMore}>
