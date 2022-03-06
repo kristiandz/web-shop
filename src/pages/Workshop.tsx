@@ -39,6 +39,7 @@ function Workshop() {
 
     const [workshop, setWorkshop] = useState<IWorkshop>({ id: 0, title: "", desc: "", price: 0, date: "", category: "", userId: 0, imageUrl: "", amount: 0 });
     const [allWorkshops, setAllWorkshops] = useState<IWorkshop[]>([]);
+    const [relatedWorkshops, setRelatedWorkshops] = useState<IWorkshop[]>([]);
     const [speaker, setSpeaker] = useState<ISpeaker>({ id: 0, name: "", password: "", email: "" });
 
     useEffect(() => {
@@ -58,10 +59,15 @@ function Workshop() {
     }, [id])
 
     useEffect(() => {
+        // Filter and store the related workshops based on the current workshop category
+        setRelatedWorkshops(allWorkshops.filter((el: IWorkshop) => el.category === workshop?.category).slice(0, 5))
+    },[allWorkshops,workshop])
+
+    useEffect(() => {
         // Moving the fetch inside since we depend on the workshop
         const fetchSpeaker = async () => {
             try {
-                const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + (workshop?.userId-1) + ".json");
+                const res = await fetch("https://web-shop-50827-default-rtdb.europe-west1.firebasedatabase.app/users/" + (workshop?.userId - 1) + ".json");
                 const data = await res.json();
                 setSpeaker(data);
             }
@@ -158,8 +164,7 @@ function Workshop() {
             <div className={styles.workshop__main__moreWorkshops}>
                 <h1>Similar workshops</h1>
                 <div className={styles.workshop__main__moreWorkshops__cards}>
-                    {allWorkshops.filter((el) => el.category === workshop?.category).slice(0, 5)
-                        .map((element) => { return (<WorkshopCard value={element} key={element.id} />) })}
+                    {relatedWorkshops.map((element) => { return (<WorkshopCard value={element} key={element.id} />) })}
                 </div>
             </div>
             <Footer />
